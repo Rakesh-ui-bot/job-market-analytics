@@ -1,0 +1,44 @@
+# Secrets and Environment Files
+.env
+*.env
+backend/.env
+frontend/.env
+
+# Node & Dependencies
+node_modules/
+frontend/node_modules/
+
+# Python Virtual Environments
+venv/
+.venv/
+backend/venv/
+ENV/
+env/
+
+# Python Cache & Compiled Files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Build Distributions & Bundles
+dist/
+frontend/dist/
+build/
+frontend/.vite/
+.npm/
+
+# Local Database Files
+*.db
+*.sqlite
+*.sqlite3
+
+# IDE & Editor Configurations
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS System Files
+.DS_Store
+Thumbs.db

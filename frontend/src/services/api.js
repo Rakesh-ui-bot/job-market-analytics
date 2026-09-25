@@ -13,10 +13,15 @@ export const getHealth = async () => {
 };
 
 export const getJobs = async (params = {}) => {
-  const res = await api.get('/jobs', { params });
+  const cleanParams = Object.fromEntries(
+    Object.entries(params).filter(
+      ([, value]) => value !== '' && value !== null && value !== undefined
+    )
+  );
+
+  const res = await api.get('/jobs', { params: cleanParams });
   return res.data;
 };
-
 export const getJobById = async (id) => {
   const res = await api.get(`/jobs/${id}`);
   return res.data;
@@ -42,7 +47,13 @@ export const analyzeSkillGap = async (targetRole, userSkills) => {
 };
 
 export const getOverview = async (params = {}) => {
-  const res = await api.get('/analytics/overview', { params });
+  const cleanParams = Object.fromEntries(
+    Object.entries(params).filter(
+      ([, value]) => value !== '' && value !== null && value !== undefined
+    )
+  );
+
+  const res = await api.get('/analytics/overview', { params: cleanParams });
   return res.data;
 };
 
